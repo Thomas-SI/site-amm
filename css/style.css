@@ -105,7 +105,7 @@ p+p{margin-top:1.1em}
   linear-gradient(180deg,transparent 40%,rgba(0,0,0,.25)),
   var(--bg,var(--mousse))}
 .ph svg{position:absolute;inset:0;width:100%;height:100%}
-.ph img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.ph img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;position:absolute;inset:0}
 .c1{--bg:linear-gradient(165deg,#7a8d6c,#3a4b3a)}
 .c2{--bg:linear-gradient(165deg,#6b8d9a,#2D4654)}
 .c3{--bg:linear-gradient(165deg,#b98a56,#6a4524)}
