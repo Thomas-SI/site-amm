@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toutes mes aventures — Thomas</title>
+<meta name="description" content="Traversées, itinérances et sommets : toutes les aventures de Thomas, futur accompagnateur en moyenne montagne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo" aria-label="Thomas, retour à l'accueil">
+    <svg viewBox="0 0 38 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M2 25 L14 6 L21 16 L25 10.5 L36 25"/>
+      <path class="tip" d="M11.4 10.2 L14 6 L16.6 10.2"/>
+    </svg>
+    <span>Thomas</span>
+  </a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="menu" id="menu">
+    <li><a href="index.html#vision">Ma vision</a></li>
+    <li><a href="index.html#histoire">Mon histoire</a></li>
+    <li><a href="aventures.html" aria-current="page">Mes aventures</a></li>
+    <li><a href="index.html#projet">Mon projet AMM</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li class="peak" id="peak" aria-hidden="true"></li>
+  </ul>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap page-hero-text">
+    <a class="back" href="index.html#aventures">← Retour à l'accueil</a>
+    <div class="eyebrow">03 · Mes aventures</div>
+    <h1>Toutes mes <em>aventures</em></h1>
+    <p class="sub">Traversées, sommets, kilomètres : le carnet de bord, aventure après aventure.</p>
+  </div>
+</header>
+
+<section class="page-section">
+  <div class="wrap">
+    <div class="filters dark" id="advFilters">
+      <button class="on" data-f="all">Toutes</button>
+      <button data-f="itinerance">Itinérances</button>
+      <button data-f="sommets">Sommets</button>
+    </div>
+    <!-- ✏️ Pour ajouter une aventure : copie une carte ci-dessous et change le lien, le texte et la photo -->
+    <div class="cards" id="advGrid">
+      <a class="card reveal" href="aventures/gr20.html" data-type="itinerance">
+        <div class="ph empty c1"><!-- ✏️ Ta photo : <img src="assets/images/aventures/gr20/couverture.jpg" alt="GR20" loading="lazy"> --></div>
+        <div class="info"><small>Corse · août 2025</small><h3>GR20</h3><p>Traversée de la Corse</p><div class="chips"><span>7 jours</span><span>195 km</span><span>14 000 m (+/−)</span></div></div>
+      </a>
+      <a class="card reveal" href="aventures/gr58.html" data-type="itinerance">
+        <div class="ph empty c2"><!-- ✏️ Ta photo : <img src="assets/images/aventures/gr58/couverture.jpg" alt="GR58" loading="lazy"> --></div>
+        <div class="info"><small>Queyras · août 2026</small><h3>GR58</h3><p>Tour du Queyras</p><div class="chips"><span>7 jours</span><span>120 km</span><span>8 100 m (+/−)</span></div></div>
+      </a>
+      <a class="card reveal" href="aventures/3-sommets.html" data-type="sommets">
+        <div class="ph empty c3"><!-- ✏️ Ta photo : <img src="assets/images/aventures/3-sommets/couverture.jpg" alt="3 sommets de 3000 m en 3 jours" loading="lazy"> --></div>
+        <div class="info"><small>Alpes · 3 jours</small><h3>3 sommets de 3000 m en 3 jours</h3><p>Grand Galibier · Pointe des Cerces · Mont Thabor</p><div class="chips"><span>Grand Galibier 3 228 m</span><span>Pointe des Cerces 3 098 m</span><span>Mont Thabor 3 178 m</span></div></div>
+      </a>
+    </div>
+
+    <div class="video-slot reveal">
+      <!-- ✏️ Ton film : <video src="assets/videos/film.mp4" controls poster="assets/images/film.jpg"></video> -->
+      <div><div class="play"></div><span>Le film de mes aventures</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <em>Thomas</em> · Accompagnateur en moyenne montagne · Haute-Savoie<br>
+  © <span id="year"></span> · Tous droits réservés
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

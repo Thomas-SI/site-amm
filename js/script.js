@@ -2,7 +2,9 @@
 const nav=document.getElementById('nav');
 const burger=document.getElementById('burger'),menu=document.getElementById('menu'),peak=document.getElementById('peak');
 const links=[...document.querySelectorAll('.menu a')];
-const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+// Sur l'accueil, les liens pointent vers des sections (#vision…). Sur les autres pages, la rubrique en cours est marquée aria-current.
+const sections=links.map(a=>{const h=a.getAttribute('href');return h.startsWith('#')?document.querySelector(h):null});
+const pageIndex=links.findIndex(a=>a.hasAttribute('aria-current'));
 let current=null,peakVisible=false;
 
 function movePeak(){
@@ -53,7 +55,8 @@ function onScroll(){
   const media=document.getElementById('heroMedia');
   if(media && y<window.innerHeight*1.2) media.style.transform=`translateY(${y*0.25}px)`;
   let cur=null;
-  sections.forEach((s,i)=>{ if(s && s.getBoundingClientRect().top<window.innerHeight*0.4) cur=i; });
+  if(pageIndex>=0) cur=pageIndex;
+  else sections.forEach((s,i)=>{ if(s && s.getBoundingClientRect().top<window.innerHeight*0.4) cur=i; });
   updateTimeline();
   if(cur!==current){
     current=cur;
@@ -75,11 +78,37 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 // Filtre des randos
-document.getElementById('filters').addEventListener('click',e=>{
+const filters=document.getElementById('filters');
+if(filters) filters.addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('#randos .rando').forEach(r=>{
     r.style.display=(b.dataset.f==='all'||r.dataset.niveau===b.dataset.f)?'':'none';
   });
 });
-document.getElementById('year').textContent=new Date().getFullYear();
+
+// Filtre de la page « Toutes mes aventures »
+const advFilters=document.getElementById('advFilters');
+if(advFilters) advFilters.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  advFilters.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('#advGrid .card').forEach(c=>{
+    c.style.display=(b.dataset.f==='all'||c.dataset.type===b.dataset.f)?'':'none';
+  });
+});
+
+// Chiffres clés : ils défilent jusqu'à leur valeur quand on arrive dessus
+const countIO=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return;
+  countIO.unobserve(e.target);
+  const el=e.target,end=parseFloat(el.dataset.count);
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent=end.toLocaleString('fr-FR');return}
+  const t0=performance.now(),dur=1400;
+  (function step(t){
+    const k=Math.min(1,(t-t0)/dur),v=Math.round(end*(1-Math.pow(1-k,3)));
+    el.textContent=v.toLocaleString('fr-FR');
+    if(k<1) requestAnimationFrame(step);
+  })(t0);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>{el.textContent='0';countIO.observe(el)});
+const yr=document.getElementById('year');if(yr) yr.textContent=new Date().getFullYear();
