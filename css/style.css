@@ -95,11 +95,9 @@ p+p{margin-top:1.1em}
 .quote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.35;color:var(--mousse);
   border-left:2px solid var(--terre);padding-left:26px}
 
-/* Mission : deux grandes phrases */
-.mission{margin-top:0;display:grid;gap:34px;max-width:900px}
-.mission p{font-family:var(--serif);font-size:clamp(1.6rem,3.6vw,2.7rem);line-height:1.25;color:var(--nuit)}
-.mission em{font-style:italic;color:var(--terre)}
-.mission-2{border-left:2px solid var(--terre);padding-left:26px;color:var(--mousse)}
+/* Mission */
+.mission-1{font-family:var(--serif);font-size:clamp(1.7rem,4vw,3rem);line-height:1.25;color:var(--nuit);max-width:900px}
+.mission-1 em{font-style:italic;color:var(--terre)}
 
 /* Titres de sous-parties */
 .sub-title{margin:clamp(70px,9vw,110px) 0 28px;font-family:var(--sans);font-weight:600;font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mousse);
@@ -107,20 +105,11 @@ p+p{margin-top:1.1em}
 .sub-title::after{content:"";flex:1;height:1px;background:rgba(88,102,76,.35)}
 
 /* Valeurs */
-.valeurs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.valeurs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
 .valeur{padding:26px 24px 28px;border:1px solid rgba(45,70,84,.22);background:rgba(255,255,255,.28);transition:transform .4s,background .4s,border-color .4s}
 .valeur:hover{transform:translateY(-5px);background:rgba(255,255,255,.5);border-color:var(--terre)}
 .valeur b{display:block;font-family:var(--serif);font-weight:500;font-size:1.5rem;color:var(--nuit);margin-bottom:6px}
 .valeur p{font-size:.9rem;line-height:1.55;color:var(--encre);opacity:.8;font-weight:300}
-
-/* Lexique : nuage de mots */
-.lexique-intro{max-width:560px;margin-bottom:26px;font-weight:300}
-.lexique{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px clamp(16px,2.6vw,34px);padding:clamp(10px,2vw,30px) 0}
-.lexique span{font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.6rem);color:var(--mousse);line-height:1.5;transition:color .3s,transform .3s;cursor:default}
-.lexique .lg{font-size:clamp(1.7rem,3.6vw,2.9rem);color:var(--nuit)}
-.lexique .sm{font-size:clamp(.95rem,1.5vw,1.2rem);opacity:.85}
-.lexique .it{font-style:italic}
-.lexique span:hover{color:var(--terre);transform:translateY(-3px) scale(1.05)}
 
 /* Promesse */
 .promesse{margin-top:clamp(70px,9vw,110px);background:var(--nuit);color:var(--sable);padding:clamp(36px,6vw,80px);text-align:center}
@@ -141,6 +130,11 @@ p+p{margin-top:1.1em}
 .step p{max-width:620px;opacity:.88;font-weight:300}
 .step:last-child{padding-bottom:0}
 .hist-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
+
+#histoire .sub-title{color:#e9c38c}
+#histoire .sub-title::after{background:rgba(232,223,204,.25)}
+#histoire .values span{border-color:rgba(232,223,204,.5);color:var(--sable)}
+#histoire .values span:hover{background:var(--sable);color:var(--nuit)}
 
 /* Aventures */
 #aventures{background:var(--sable)}
@@ -220,14 +214,11 @@ footer em{font-family:var(--serif);font-size:1.1rem;letter-spacing:.04em}
 }
 @media (max-width:860px){
   .vision-grid,.hist-grid,.projet-top{grid-template-columns:1fr;gap:34px}
-  .valeurs{grid-template-columns:repeat(2,1fr)}
   .cards,.pillars{grid-template-columns:1fr}
   .card{aspect-ratio:4/3}
   .rando{grid-template-columns:1fr}.badge{justify-self:start}
   .video-slot{aspect-ratio:16/10}
 }
 @media (max-width:560px){
-  .valeurs{grid-template-columns:1fr}
-  .mission-2{padding-left:18px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.kicker,.hero h1,.hero p.sub,.cta{opacity:1!important;transform:none!important}}
