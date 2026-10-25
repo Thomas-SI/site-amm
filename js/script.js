@@ -21,6 +21,31 @@ function movePeak(){
   peak.style.opacity=1;peakVisible=true;
 }
 
+// Frise « Mon histoire » : la barre se remplit, le point lumineux grossit sur chaque étape
+const timeline=document.getElementById('timeline');
+const tlFill=document.getElementById('tlFill'),tlOrb=document.getElementById('tlOrb');
+const tlSteps=timeline?[...timeline.querySelectorAll('.step')]:[];
+function updateTimeline(){
+  if(!timeline) return;
+  const line=timeline.querySelector('.tl-line').getBoundingClientRect();
+  const readY=window.innerHeight*0.55;                        // « ligne de lecture » à 55 % de l'écran
+  const h=Math.max(0,Math.min(line.height,readY-line.top));
+  tlFill.style.height=h+'px';
+  tlOrb.style.top=h+'px';
+  timeline.classList.toggle('live',readY>line.top-40 && line.bottom>0);
+  let lastPassed=-1,near=Infinity;
+  tlSteps.forEach((s,i)=>{
+    const dotY=s.getBoundingClientRect().top+9+5.5;
+    if(dotY<=readY) lastPassed=i;
+    near=Math.min(near,Math.abs(dotY-(line.top+h)));
+  });
+  tlSteps.forEach((s,i)=>{
+    s.classList.toggle('passed',i<lastPassed);
+    s.classList.toggle('current',i===lastPassed);
+  });
+  tlOrb.style.setProperty('--orb-scale',(1+1.1*Math.max(0,1-near/70)).toFixed(2));
+}
+
 function onScroll(){
   const y=window.scrollY;
   nav.classList.toggle('scrolled',y>40);
@@ -29,6 +54,7 @@ function onScroll(){
   if(media && y<window.innerHeight*1.2) media.style.transform=`translateY(${y*0.25}px)`;
   let cur=null;
   sections.forEach((s,i)=>{ if(s && s.getBoundingClientRect().top<window.innerHeight*0.4) cur=i; });
+  updateTimeline();
   if(cur!==current){
     current=cur;
     links.forEach((a,i)=>a.classList.toggle('active',i===cur));
@@ -36,7 +62,7 @@ function onScroll(){
   }
 }
 window.addEventListener('scroll',onScroll,{passive:true});
-window.addEventListener('resize',movePeak);
+window.addEventListener('resize',()=>{movePeak();updateTimeline()});
 if(document.fonts) document.fonts.ready.then(movePeak);   // recalcule une fois les polices chargées
 onScroll();
 

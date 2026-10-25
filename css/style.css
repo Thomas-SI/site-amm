@@ -124,7 +124,18 @@ p+p{margin-top:1.1em}
 .timeline{position:relative;margin-top:60px;padding-left:34px}
 .timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:rgba(232,223,204,.3)}
 .step{position:relative;padding-bottom:46px}
-.step::before{content:"";position:absolute;left:-34px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--terre);box-shadow:0 0 0 5px rgba(140,98,57,.25)}
+/* Barre de progression : se remplit en doré pendant la lecture */
+.tl-line{position:absolute;left:5px;top:6px;bottom:6px;width:1px;pointer-events:none}
+.tl-fill{position:absolute;left:0;top:0;width:2px;margin-left:-.5px;height:0;background:linear-gradient(180deg,rgba(233,195,140,.2),#e9c38c)}
+.tl-orb{position:absolute;left:50%;top:0;width:13px;height:13px;margin:-6.5px 0 0 -6.5px;border-radius:50%;background:#f6dfae;
+  box-shadow:0 0 0 5px rgba(233,195,140,.22),0 0 22px 4px rgba(233,195,140,.55);transform:scale(var(--orb-scale,1));opacity:0;transition:opacity .4s}
+.timeline.live .tl-orb{opacity:1}
+.step::before{content:"";position:absolute;left:-34px;top:9px;width:11px;height:11px;border-radius:50%;background:rgba(232,223,204,.22);
+  transition:background .5s,box-shadow .5s,transform .5s}
+.step.passed::before{background:var(--terre);box-shadow:0 0 0 5px rgba(140,98,57,.25)}
+.step.current::before{background:#e9c38c;transform:scale(1.55);box-shadow:0 0 0 6px rgba(233,195,140,.22),0 0 20px rgba(233,195,140,.6)}
+.step h3{transition:color .5s}
+.step.current h3{color:#f6dfae}
 .step .date{font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:#e9c38c}
 .step h3{font-family:var(--serif);font-weight:500;font-size:1.7rem;margin:4px 0 8px}
 .step p{max-width:620px;opacity:.88;font-weight:300}
