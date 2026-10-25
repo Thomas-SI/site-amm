@@ -14,7 +14,13 @@
 
 <!-- ============ MENU / SOMMAIRE ============ -->
 <nav id="nav">
-  <a href="#accueil" class="logo">Thomas</a>
+  <a href="#accueil" class="logo" aria-label="Thomas, retour à l'accueil">
+    <svg viewBox="0 0 38 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M2 25 L14 6 L21 16 L25 10.5 L36 25"/>
+      <path class="tip" d="M11.4 10.2 L14 6 L16.6 10.2"/>
+    </svg>
+    <span>Thomas</span>
+  </a>
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="menu" id="menu">
     <li><a href="#vision">Ma vision</a></li>
@@ -22,6 +28,7 @@
     <li><a href="#aventures">Mes aventures</a></li>
     <li><a href="#projet">Mon projet AMM</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li class="peak" id="peak" aria-hidden="true"></li>
   </ul>
 </nav>
 

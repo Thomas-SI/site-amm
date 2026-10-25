@@ -1,7 +1,26 @@
-// Menu : fond au scroll + surlignage de la section active
+// Menu : fond au scroll, rubrique active et petit sommet qui glisse
 const nav=document.getElementById('nav');
+const burger=document.getElementById('burger'),menu=document.getElementById('menu'),peak=document.getElementById('peak');
 const links=[...document.querySelectorAll('.menu a')];
 const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+let current=null,peakVisible=false;
+
+function movePeak(){
+  if(!peak) return;
+  if(current===null){peak.style.opacity=0;peakVisible=false;return}
+  const a=links[current];
+  const x=a.offsetLeft+a.offsetWidth/2;
+  if(!peakVisible){            // première apparition : on se place sans glisser
+    peak.style.transition='none';
+    peak.style.transform=`translateX(${x}px)`;
+    peak.offsetWidth;          // force l'application
+    peak.style.transition='';
+  } else {
+    peak.style.transform=`translateX(${x}px)`;
+  }
+  peak.style.opacity=1;peakVisible=true;
+}
+
 function onScroll(){
   const y=window.scrollY;
   nav.classList.toggle('scrolled',y>40);
@@ -10,12 +29,18 @@ function onScroll(){
   if(media && y<window.innerHeight*1.2) media.style.transform=`translateY(${y*0.25}px)`;
   let cur=null;
   sections.forEach((s,i)=>{ if(s && s.getBoundingClientRect().top<window.innerHeight*0.4) cur=i; });
-  links.forEach((a,i)=>a.classList.toggle('active',i===cur));
+  if(cur!==current){
+    current=cur;
+    links.forEach((a,i)=>a.classList.toggle('active',i===cur));
+    movePeak();
+  }
 }
-window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',movePeak);
+if(document.fonts) document.fonts.ready.then(movePeak);   // recalcule une fois les polices chargées
+onScroll();
 
 // Menu mobile
-const burger=document.getElementById('burger'),menu=document.getElementById('menu');
 burger.onclick=()=>{burger.classList.toggle('open');menu.classList.toggle('open')};
 links.forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');menu.classList.remove('open')}));
 
