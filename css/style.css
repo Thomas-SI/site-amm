@@ -87,11 +87,43 @@ p+p{margin-top:1.1em}
 
 /* Vision */
 #vision{background:var(--sable)}
-.vision-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
-.quote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.35;color:var(--mousse);
-  border-left:2px solid var(--terre);padding-left:26px}
-.values{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.values span{padding:7px 18px;border:1px solid var(--mousse);color:var(--mousse);border-radius:99px;font-size:.82rem;letter-spacing:.08em}
+.values{display:flex;flex-wrap:wrap;gap:10px}
+.values span{padding:9px 22px;border:1px solid var(--mousse);color:var(--mousse);border-radius:99px;font-size:.88rem;letter-spacing:.06em;transition:.3s}
+.values span:hover{background:var(--mousse);color:var(--sable)}
+
+/* Mission : deux grandes phrases */
+.mission{margin-top:10px;display:grid;gap:34px;max-width:900px}
+.mission p{font-family:var(--serif);font-size:clamp(1.6rem,3.6vw,2.7rem);line-height:1.25;color:var(--nuit)}
+.mission em{font-style:italic;color:var(--terre)}
+.mission-2{border-left:2px solid var(--terre);padding-left:26px;color:var(--mousse)}
+
+/* Titres de sous-parties */
+.sub-title{margin:clamp(70px,9vw,110px) 0 28px;font-family:var(--sans);font-weight:600;font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mousse);
+  display:flex;align-items:center;gap:18px}
+.sub-title::after{content:"";flex:1;height:1px;background:rgba(88,102,76,.35)}
+
+/* Valeurs */
+.valeurs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.valeur{padding:26px 24px 28px;border:1px solid rgba(45,70,84,.22);background:rgba(255,255,255,.28);transition:transform .4s,background .4s,border-color .4s}
+.valeur:hover{transform:translateY(-5px);background:rgba(255,255,255,.5);border-color:var(--terre)}
+.valeur b{display:block;font-family:var(--serif);font-weight:500;font-size:1.5rem;color:var(--nuit);margin-bottom:6px}
+.valeur p{font-size:.9rem;line-height:1.55;color:var(--encre);opacity:.8;font-weight:300}
+
+/* Lexique : nuage de mots */
+.lexique-intro{max-width:560px;margin-bottom:26px;font-weight:300}
+.lexique{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px clamp(16px,2.6vw,34px);padding:clamp(10px,2vw,30px) 0}
+.lexique span{font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.6rem);color:var(--mousse);line-height:1.5;transition:color .3s,transform .3s;cursor:default}
+.lexique .lg{font-size:clamp(1.7rem,3.6vw,2.9rem);color:var(--nuit)}
+.lexique .sm{font-size:clamp(.95rem,1.5vw,1.2rem);opacity:.85}
+.lexique .it{font-style:italic}
+.lexique span:hover{color:var(--terre);transform:translateY(-3px) scale(1.05)}
+
+/* Promesse */
+.promesse{margin-top:clamp(70px,9vw,110px);background:var(--nuit);color:var(--sable);padding:clamp(36px,6vw,80px);text-align:center}
+.promesse .eyebrow{justify-content:center;color:#e9c38c}
+.promesse-lead{font-family:var(--serif);font-size:clamp(1.6rem,3.6vw,2.8rem);line-height:1.25;max-width:800px;margin:0 auto 22px}
+.promesse-lead em{font-style:italic;color:#e9c38c}
+.promesse p:last-child{max-width:640px;margin:0 auto;font-weight:300;opacity:.9}
 
 /* Histoire */
 #histoire{background:var(--nuit);color:var(--sable)}
@@ -183,10 +215,15 @@ footer em{font-family:var(--serif);font-size:1.1rem;letter-spacing:.04em}
   nav{z-index:60}
 }
 @media (max-width:860px){
-  .vision-grid,.hist-grid,.projet-top{grid-template-columns:1fr;gap:34px}
+  .hist-grid,.projet-top{grid-template-columns:1fr;gap:34px}
+  .valeurs{grid-template-columns:repeat(2,1fr)}
   .cards,.pillars{grid-template-columns:1fr}
   .card{aspect-ratio:4/3}
   .rando{grid-template-columns:1fr}.badge{justify-self:start}
   .video-slot{aspect-ratio:16/10}
+}
+@media (max-width:560px){
+  .valeurs{grid-template-columns:1fr}
+  .mission-2{padding-left:18px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.kicker,.hero h1,.hero p.sub,.cta{opacity:1!important;transform:none!important}}
