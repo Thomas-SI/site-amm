@@ -27,24 +27,10 @@
 
 <!-- ============ ACCUEIL ============ -->
 <header class="hero" id="accueil">
-  <!-- VIDÉO DE FOND (optionnel) : mets ta vidéo dans le dossier assets/ puis décommente la ligne ci-dessous
-  <video class="hero-media" src="assets/hero.mp4" autoplay muted loop playsinline></video> -->
-  <div class="stars"></div>
-  <div class="sun" id="sun"></div>
-
-  <!-- Montagnes en couches (effet parallaxe) -->
-  <div class="layer" data-speed="0.10" style="height:78%">
-    <svg viewBox="0 0 1440 600" preserveAspectRatio="none"><path fill="#4d6a73" opacity=".55" d="M0 330 L120 250 L210 300 L360 150 L470 260 L560 210 L720 90 L850 240 L960 190 L1100 280 L1230 170 L1340 260 L1440 220 L1440 600 L0 600Z"/></svg>
-  </div>
-  <div class="layer" data-speed="0.22" style="height:62%">
-    <svg viewBox="0 0 1440 600" preserveAspectRatio="none"><path fill="#3a5560" opacity=".8" d="M0 300 L140 210 L260 290 L400 170 L520 270 L680 120 L800 250 L930 200 L1080 300 L1220 190 L1440 310 L1440 600 L0 600Z"/></svg>
-  </div>
-  <div class="layer" data-speed="0.36" style="height:46%">
-    <svg viewBox="0 0 1440 600" preserveAspectRatio="none"><path fill="#58664C" d="M0 260 L100 200 L220 270 L340 190 L470 280 L600 210 L760 300 L900 220 L1040 290 L1180 210 L1320 280 L1440 230 L1440 600 L0 600Z"/></svg>
-  </div>
-  <div class="layer" data-speed="0.55" style="height:30%">
-    <svg viewBox="0 0 1440 600" preserveAspectRatio="none"><path fill="#2a3b2c" d="M0 220 Q180 150 360 230 T720 210 T1080 240 T1440 200 L1440 600 L0 600Z"/></svg>
-  </div>
+  <!-- Photo de fond. Pour une vidéo à la place : remplace la ligne <img> par
+       <video class="hero-media" src="assets/videos/hero.mp4" autoplay muted loop playsinline></video> -->
+  <img class="hero-media" id="heroMedia" src="assets/images/hero.jpg" alt="Panorama de montagnes enneigées sous un ciel clair">
+  <div class="hero-veil"></div>
 
   <div class="hero-text">
     <span class="kicker">Futur Accompagnateur en moyenne montagne</span>

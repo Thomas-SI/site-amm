@@ -5,12 +5,9 @@ const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
 function onScroll(){
   const y=window.scrollY;
   nav.classList.toggle('scrolled',y>40);
-  // parallaxe des montagnes
-  document.querySelectorAll('.layer').forEach(l=>{
-    if(y<window.innerHeight*1.2) l.style.transform=`translateY(${y*l.dataset.speed}px)`;
-  });
-  const sun=document.getElementById('sun');
-  if(y<window.innerHeight*1.2) sun.style.transform=`translateY(${y*0.3}px)`;
+  // parallaxe de la photo d'accueil
+  const media=document.getElementById('heroMedia');
+  if(media && y<window.innerHeight*1.2) media.style.transform=`translateY(${y*0.25}px)`;
   let cur=null;
   sections.forEach((s,i)=>{ if(s && s.getBoundingClientRect().top<window.innerHeight*0.4) cur=i; });
   links.forEach((a,i)=>a.classList.toggle('active',i===cur));
