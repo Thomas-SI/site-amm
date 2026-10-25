@@ -91,8 +91,12 @@ p+p{margin-top:1.1em}
 .values span{padding:9px 22px;border:1px solid var(--mousse);color:var(--mousse);border-radius:99px;font-size:.88rem;letter-spacing:.06em;transition:.3s}
 .values span:hover{background:var(--mousse);color:var(--sable)}
 
+.vision-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.quote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.35;color:var(--mousse);
+  border-left:2px solid var(--terre);padding-left:26px}
+
 /* Mission : deux grandes phrases */
-.mission{margin-top:10px;display:grid;gap:34px;max-width:900px}
+.mission{margin-top:0;display:grid;gap:34px;max-width:900px}
 .mission p{font-family:var(--serif);font-size:clamp(1.6rem,3.6vw,2.7rem);line-height:1.25;color:var(--nuit)}
 .mission em{font-style:italic;color:var(--terre)}
 .mission-2{border-left:2px solid var(--terre);padding-left:26px;color:var(--mousse)}
@@ -215,7 +219,7 @@ footer em{font-family:var(--serif);font-size:1.1rem;letter-spacing:.04em}
   nav{z-index:60}
 }
 @media (max-width:860px){
-  .hist-grid,.projet-top{grid-template-columns:1fr;gap:34px}
+  .vision-grid,.hist-grid,.projet-top{grid-template-columns:1fr;gap:34px}
   .valeurs{grid-template-columns:repeat(2,1fr)}
   .cards,.pillars{grid-template-columns:1fr}
   .card{aspect-ratio:4/3}
