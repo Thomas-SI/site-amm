@@ -318,3 +318,19 @@ footer em{font-family:var(--serif);font-size:1.1rem;letter-spacing:.04em}
 @media (max-width:560px){
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.kicker,.hero h1,.hero p.sub,.cta{opacity:1!important;transform:none!important}}
+
+/* Histoire : accueil (frise compacte) et page dédiée */
+.hist-intro-grid{align-items:start}
+.hist-intro-grid .timeline.compact{margin-top:44px}
+.hist-intro .lead{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.35;margin-bottom:20px;color:var(--sable)}
+.hist-intro p:not(.lead){font-weight:300;opacity:.9;max-width:560px}
+.timeline.compact .step{padding-bottom:30px}
+.timeline.compact .step h3{margin-bottom:0}
+.timeline.compact .step:last-child{padding-bottom:0}
+.btn.light{background:var(--sable);color:var(--nuit);border-color:var(--sable)}
+.btn.light:hover{background:var(--terre);border-color:var(--terre);color:var(--sable)}
+.hist-resume .lead{margin-bottom:18px}
+.hist-detail .timeline{margin-top:0}
+.hist-detail .step{padding-bottom:64px}
+.hist-detail .step:last-child{padding-bottom:0}
+.step-photo{margin:22px 0 0;max-width:620px;aspect-ratio:16/9;border:1px dashed rgba(232,223,204,.35);display:flex;align-items:center;justify-content:center;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,223,204,.5)}
