@@ -329,7 +329,8 @@ footer em{font-family:var(--serif);font-size:1.1rem;letter-spacing:.04em}
 .timeline.compact .step:last-child{padding-bottom:0}
 .btn.light{background:var(--sable);color:var(--nuit);border-color:var(--sable)}
 .btn.light:hover{background:var(--terre);border-color:var(--terre);color:var(--sable)}
-.hist-resume .lead{margin-bottom:18px}
+.hist-resume .lead,.amm-resume .lead{margin-bottom:18px}
+.amm-resume p+p{margin-top:14px}
 .hist-detail .timeline{margin-top:0}
 .hist-detail .sub-title{margin-top:90px}
 .hist-detail .step{padding-bottom:64px}
