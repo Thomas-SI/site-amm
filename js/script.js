@@ -97,6 +97,16 @@ if(advFilters) advFilters.addEventListener('click',e=>{
   });
 });
 
+// Filtre des courses (page Trail)
+const courseFilters=document.getElementById('courseFilters');
+if(courseFilters) courseFilters.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  courseFilters.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('#courses .course').forEach(c=>{
+    c.style.display=(b.dataset.f==='all'||c.dataset.year===b.dataset.f)?'':'none';
+  });
+});
+
 // Chiffres clés : ils défilent jusqu'à leur valeur quand on arrive dessus
 const countIO=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting) return;
