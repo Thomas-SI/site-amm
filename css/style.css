@@ -409,3 +409,5 @@ footer em{font-family:var(--serif);font-size:1.1rem;letter-spacing:.04em}
 .contact-insta a{color:var(--terre);text-decoration:none;border-bottom:1px solid currentColor;transition:color .3s}
 .contact-insta a:hover{color:var(--nuit)}
 @media (max-width:860px){.contact-cards{grid-template-columns:1fr}}
+
+.step-punch{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:#e9c38c;margin-top:14px;max-width:620px}
