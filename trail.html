@@ -33,61 +33,73 @@
 </nav>
 
 <header class="page-hero">
-  <img class="page-hero-media" src="assets/images/trail-foret.jpg" alt="Thomas court dans une forêt" style="object-position:50% 30%">
+  <img class="page-hero-media" src="assets/images/trail-ponton-sombre.jpg" alt="Silhouette de Thomas courant sur un ponton, en contre-jour" style="object-position:50% 45%">
   <div class="wrap page-hero-text">
     <a class="back" href="index.html#trail">← Retour à l'accueil</a>
     <div class="eyebrow">04 · Trail</div>
     <h1>Mon projet <em>sportif</em></h1>
-    <p class="sub">Courir, performer, partager : mon projet sportif.</p>
+    <p class="sub">Courir, performer, partager.</p>
   </div>
 </header>
 
-<section class="stats-band">
-  <!-- ✏️ Chiffres fictifs -->
-  <div class="wrap stats"><div class="stat reveal"><b data-count="12">12</b><span>courses</span></div><div class="stat reveal"><b data-count="480">480</b><span>km parcourus</span></div><div class="stat reveal"><b data-count="24000">24000</b><span>m de dénivelé positif</span></div><div class="stat reveal"><b data-count="3">3</b><span>podiums</span></div></div>
-</section>
-
-<section class="page-section trail-obj">
-  <div class="wrap">
-    <div class="eyebrow reveal">Mes objectifs</div>
-    <h2 class="reveal">Les prochaines <em>courses</em></h2>
-    <!-- ✏️ Exemples : à remplacer par tes vrais objectifs -->
-    <div class="objs">
-      <div class="obj reveal"><span class="c-year">Printemps 2027</span><div><h4>Objectif exemple n°1</h4><div class="meta">50 km · +3 000 m</div></div></div>
-      <div class="obj reveal"><span class="c-year">Été 2027</span><div><h4>Objectif exemple n°2</h4><div class="meta">80 km · +5 000 m</div></div></div>
-    </div>
+<section class="page-section trail-why">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow">Pourquoi je cours</div>
+    <p class="lead">Courir longtemps, c’est se retrouver face à soi-même : l’euphorie, la souffrance, la frustration. Les épreuves d’endurance m’ont toujours attiré.</p>
+    <p>Cela fait écho à mon passé, à mes échecs et au grave accident de 2023. Je dois constamment m’adapter pour donner le meilleur de moi-même. Je cours pour garder le cap sur une vie où je me sens épanoui, fort physiquement comme mentalement. Grâce à ce sport, j’apprends chaque jour un peu plus sur moi, et c’est ainsi que je deviens une meilleure version de moi-même.</p>
+    <p>Il y a beaucoup à maîtriser, et ça aussi, ça m’attire : l’entraînement, la récupération, le sommeil, la nutrition, l’altitude, la météo… Mon ancien métier m’a appris la rigueur du geste précis, je la retrouve ici. Chaque détail compte, et chaque progrès est une victoire.</p>
+    <p class="quote adv-quote">«&nbsp;La seule personne à dépasser est celle que j’étais hier.&nbsp;»</p>
   </div>
 </section>
 
 <section class="page-section alt trail-courses">
-  <div class="wrap">
-    <div class="eyebrow reveal">Mon palmarès</div>
-    <h2 class="reveal">Mes <em>courses</em></h2>
-    <div class="filters dark" id="courseFilters">
-      <button class="on" data-f="all">Toutes</button>
-      <button data-f="2026">2026</button>
-      <button data-f="2025">2025</button>
-      <button data-f="2024">2024</button>
+  <div class="wrap trail-split">
+    <div>
+      <div class="eyebrow reveal">Mon palmarès</div>
+      <h2 class="reveal">Mes <em>courses</em></h2>
+      <div class="filters dark" id="courseFilters">
+        <button class="on" data-f="all">Toutes</button>
+        <button data-f="2026">2026</button>
+        <button data-f="2025">2025</button>
+      </div>
+      <!-- ✏️ Une course = un bloc <div class="course" data-year="AAAA">. Copie-colle (le plus récent en haut). Classements au scratch. -->
+      <div class="courses" id="courses">
+      <div class="course reveal" data-year="2026"><span class="c-year">Octobre 2026</span><div><h4>Trail des Glières</h4><div class="meta">64 km · +3 400 m</div></div><span class="c-res">7 h 33 · 9ᵉ</span></div>
+      <div class="course reveal" data-year="2026"><span class="c-year">Juillet 2026</span><div><h4>Trail des Gets</h4><div class="meta">45 km · +2 400 m</div></div><span class="c-res">4 h 43 · 6ᵉ</span></div>
+      <div class="course reveal" data-year="2026"><span class="c-year">Mai 2026</span><div><h4>Ultra montée de Thollon-les-Mémises</h4><div class="meta">32 km · +6 300 m · 11 montées</div></div><span class="c-res">7 h 42 · 13ᵉ</span></div>
+      <div class="course reveal" data-year="2025"><span class="c-year">Mai 2025</span><div><h4>Maxi-Race · relais à 4 (1ᵉʳ relais)</h4><div class="meta">21 km · +1 200 m</div></div><span class="c-res">10ᵉ à l’arrivée du relais</span></div>
+      </div>
     </div>
-    <!-- ✏️ Courses fictives. Une course = un bloc <div class="course" data-year="AAAA">. Copie-colle pour en ajouter. -->
-    <div class="courses" id="courses">
-      <div class="course reveal" data-year="2026"><span class="c-year">2026</span><div><h4>Trail exemple · Lac d’Annecy</h4><div class="meta">42 km · +2 100 m</div></div><span class="c-res">5 h 12 · 48ᵉ / 310</span></div>
-      <div class="course reveal" data-year="2026"><span class="c-year">2026</span><div><h4>Trail exemple · Aravis</h4><div class="meta">21 km · +1 200 m</div></div><span class="c-res">2 h 31 · 17ᵉ / 220</span></div>
-      <div class="course reveal" data-year="2025"><span class="c-year">2025</span><div><h4>Trail exemple · Beaufortain</h4><div class="meta">55 km · +3 400 m</div></div><span class="c-res">8 h 05 · 62ᵉ / 280</span></div>
-      <div class="course reveal" data-year="2025"><span class="c-year">2025</span><div><h4>Trail exemple · Vercors</h4><div class="meta">30 km · +1 600 m</div></div><span class="c-res">3 h 40 · 31ᵉ / 340</span></div>
-      <div class="course reveal" data-year="2024"><span class="c-year">2024</span><div><h4>Trail exemple · Bauges</h4><div class="meta">15 km · +800 m</div></div><span class="c-res">1 h 22 · 9ᵉ / 190</span></div>
+    <div class="split-photo reveal"><img src="assets/images/trail-foret.jpg" alt="Thomas court dans une forêt" loading="lazy" style="object-position:50% 35%"></div>
+  </div>
+</section>
+
+<section class="page-section trail-obj">
+  <div class="wrap trail-split flip">
+    <div class="split-photo reveal"><img src="assets/images/trail-ponton-clair.jpg" alt="Thomas court sur un ponton au bord du lac d’Annecy" loading="lazy"></div>
+    <div>
+      <div class="eyebrow reveal">Mes objectifs</div>
+      <h2 class="reveal">Les prochaines <em>courses</em></h2>
+      <!-- ✏️ Une course à venir = un bloc <div class="obj">. -->
+      <div class="objs">
+      <div class="obj reveal"><span class="c-year">Mars 2027</span><div><h4>Trail du Mont Grêle</h4><div class="meta">39 km · +2 100 m</div></div></div>
+      <div class="obj reveal"><span class="c-year">Mai 2027</span><div><h4>UMTLM · Ultra montée de Thollon-les-Mémises</h4><div class="meta">Format 8 heures</div></div></div>
+      <div class="obj reveal"><span class="c-year">Mai 2027</span><div><h4>Trail des Crêtes du Brevon</h4><div class="meta">35 km · +2 700 m</div></div></div>
+      <div class="obj reveal"><span class="c-year">Juillet 2027</span><div><h4>Verbier by UTMB</h4><div class="meta">47 km · +2 900 m</div></div></div>
+      <div class="obj reveal"><span class="c-year">Octobre 2027</span><div><h4>Trail des Glières</h4><div class="meta">64 km · +3 400 m · objectif 7 h 10 (7 h 33 en 2026)</div></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="page-section trail-photos">
-  <div class="wrap">
-    <div class="eyebrow reveal">En images</div>
-    <h2 class="reveal">À l’entraînement</h2>
-    <div class="gal-grid">
-      <figure class="gal-item reveal" style="aspect-ratio:3/4"><img src="assets/images/trail-foret.jpg" alt="Thomas court dans une forêt" loading="lazy" style="object-position:50% 35%"></figure>
-      <figure class="gal-item reveal" style="aspect-ratio:3/4"><img src="assets/images/trail-ponton-sombre.jpg" alt="Silhouette de Thomas courant sur un ponton, en contre-jour" loading="lazy"></figure>
-      <figure class="gal-item reveal" style="aspect-ratio:3/4"><img src="assets/images/trail-ponton-clair.jpg" alt="Thomas court sur un ponton au bord du lac d’Annecy" loading="lazy"></figure>
+<section id="classements" class="trail-rank">
+  <div class="wrap reveal">
+    <div class="eyebrow">Mes performances en chiffres</div>
+    <p class="promesse-lead">Retrouvez mes résultats officiels sur les classements de <em>référence du trail.</em></p>
+    <div class="rank-links">
+      <!-- ✏️ Remplace # par l'adresse de ton profil -->
+      <a class="btn light" href="#" target="_blank" rel="noopener">Mon Index UTMB</a>
+      <a class="btn light" href="#" target="_blank" rel="noopener">Ma cote ITRA</a>
     </div>
   </div>
 </section>
@@ -96,9 +108,9 @@
   <div class="wrap">
     <div class="promesse reveal" style="margin-top:0">
       <div class="eyebrow">Devenir partenaire</div>
-      <p class="promesse-lead">Un projet sportif, une histoire, <em>une communauté.</em></p>
-      <!-- ✏️ Texte fictif -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p class="promesse-lead">Courir <em>ensemble.</em></p>
+      <!-- ✏️ Texte provisoire : à retravailler -->
+      <p>Je m’entraîne chaque semaine pour performer, et je raconte ce parcours à travers la montagne et le trail. Si vous partagez ces valeurs de dépassement de soi et de résilience, je serais heureux de vous compter parmi mes partenaires.</p>
       <div class="section-cta"><a class="btn light" href="index.html#contact">Me contacter</a></div>
     </div>
   </div>
