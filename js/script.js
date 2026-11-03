@@ -122,3 +122,8 @@ const countIO=new IntersectionObserver(es=>es.forEach(e=>{
 }),{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>{el.textContent='0';countIO.observe(el)});
 const yr=document.getElementById('year');if(yr) yr.textContent=new Date().getFullYear();
+
+// Vidéo d'en-tête : à l'arrêt si l'on préfère moins d'animations
+document.querySelectorAll('video.page-hero-media').forEach(v=>{
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){v.removeAttribute('autoplay');v.pause()}
+});

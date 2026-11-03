@@ -411,3 +411,6 @@ footer em{font-family:var(--serif);font-size:1.1rem;letter-spacing:.04em}
 @media (max-width:860px){.contact-cards{grid-template-columns:1fr}}
 
 .step-punch{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:#e9c38c;margin-top:14px;max-width:620px}
+
+video.page-hero-media{opacity:.5}
+video.page-hero-media~.page-hero-text{text-shadow:0 2px 22px rgba(18,32,40,.6)}
