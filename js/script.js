@@ -2,8 +2,8 @@
 const nav=document.getElementById('nav');
 const burger=document.getElementById('burger'),menu=document.getElementById('menu'),peak=document.getElementById('peak');
 const links=[...document.querySelectorAll('.menu a')];
-// Sur l'accueil, les liens pointent vers des sections (#vision…). Sur les autres pages, la rubrique en cours est marquée aria-current.
-const sections=links.map(a=>{const h=a.getAttribute('href');return h.startsWith('#')?document.querySelector(h):null});
+// Sur l'accueil, chaque lien est relié à sa section (data-section) pour suivre le défilement. Sur les autres pages, la rubrique en cours est marquée aria-current.
+const sections=links.map(a=>{const h=a.getAttribute('href');const id=a.dataset.section||(h.startsWith('#')?h.slice(1):null);return id?document.getElementById(id):null});
 const pageIndex=links.findIndex(a=>a.hasAttribute('aria-current'));
 let current=null,peakVisible=false;
 
