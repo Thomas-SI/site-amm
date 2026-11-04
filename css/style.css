@@ -451,3 +451,11 @@ video.page-hero-media~.page-hero-text{text-shadow:0 2px 22px rgba(18,32,40,.6)}
 .step-photo.has-img.portrait img{aspect-ratio:auto;height:auto}
 .step-photo.has-img.portrait{margin-top:22px}
 img.page-hero-media~.page-hero-text{text-shadow:0 2px 22px rgba(18,32,40,.6)}
+
+/* Histoire : « Ce qui m'anime » (cartes animées) */
+.passions-grid{margin-top:10px}
+.passions-grid .pillar:nth-child(n+4) .p-icon path{transition-delay:.45s,0s}
+.passions-grid .pillar:nth-child(3n+3) .p-icon path{transition-delay:.65s,0s}
+.passions-grid .pillar:hover .p-icon{transform:scale(1.08)}
+.passions-grid .p-icon{transition:color .4s,transform .4s}
+@media(min-width:601px) and (max-width:900px){.passions-grid{grid-template-columns:repeat(2,1fr)}}
