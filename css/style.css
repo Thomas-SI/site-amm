@@ -64,11 +64,11 @@ nav.scrolled .menu{background:rgba(232,223,204,.08);border-color:rgba(232,223,20
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;z-index:2;background:linear-gradient(180deg,rgba(232,223,204,0),var(--sable))}
 .hero-text{position:relative;z-index:5;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 20px 8vh}
 .hero-text{text-shadow:0 1px 14px rgba(20,32,38,.55)}
-.kicker{font-size:.8rem;letter-spacing:.35em;text-transform:uppercase;opacity:0;animation:rise 1.2s .3s forwards}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(3.2rem,10vw,8rem);line-height:1;margin:14px 0 18px;
-  opacity:0;animation:rise 1.4s .5s forwards;letter-spacing:-.01em}
+.kicker{font-size:.8rem;letter-spacing:.35em;text-transform:uppercase;opacity:0;animation:rise 1.2s .9s forwards;margin-bottom:22px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.7rem,8.4vw,7rem);line-height:1.02;margin:0 0 16px;
+  opacity:0;animation:rise 1.4s .3s forwards;letter-spacing:-.01em}
 .hero h1 em{font-style:italic;color:#e9c38c}
-.hero p.sub{max-width:560px;font-size:clamp(1rem,2vw,1.2rem);font-weight:300;opacity:0;animation:rise 1.4s .8s forwards}
+.hero p.sub{max-width:560px;font-size:clamp(1rem,2vw,1.2rem);font-weight:300;opacity:0;animation:rise 1.4s 1.2s forwards}
 .cta{margin-top:34px;display:inline-block;padding:14px 34px;border:1px solid var(--sable);text-decoration:none;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;
   transition:.35s;opacity:0;animation:rise 1.4s 1.1s forwards}
 .cta:hover{background:var(--sable);color:var(--nuit)}
@@ -459,3 +459,5 @@ img.page-hero-media~.page-hero-text{text-shadow:0 2px 22px rgba(18,32,40,.6)}
 .passions-grid .pillar:hover .p-icon{transform:scale(1.08)}
 .passions-grid .p-icon{transition:color .4s,transform .4s}
 @media(min-width:601px) and (max-width:900px){.passions-grid{grid-template-columns:repeat(2,1fr)}}
+
+.amm-offres{scroll-margin-top:70px}
