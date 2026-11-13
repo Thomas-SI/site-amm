@@ -463,3 +463,11 @@ img.page-hero-media~.page-hero-text{text-shadow:0 2px 22px rgba(18,32,40,.6)}
 @media(min-width:601px) and (max-width:900px){.passions-grid{grid-template-columns:repeat(2,1fr)}}
 
 .amm-offres{scroll-margin-top:70px}
+
+/* Réseaux sociaux (accueil) */
+.follow{margin-top:44px;text-align:center}
+.follow p{font-weight:300;margin-bottom:16px}
+.socials{display:flex;justify-content:center;gap:16px}
+.socials a{width:52px;height:52px;border-radius:50%;border:1px solid var(--nuit);color:var(--nuit);display:grid;place-items:center;transition:background .3s,color .3s,transform .3s}
+.socials a svg{width:24px;height:24px}
+.socials a:hover{background:var(--nuit);color:var(--sable);transform:translateY(-3px)}
